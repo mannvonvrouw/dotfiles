@@ -1,0 +1,11 @@
+/* Change main Discord font */
+:root {
+    --font-primary: "Buran USSR", "gg sans", sans-serif !important;
+    --font-display: "Buran USSR", "gg sans", sans-serif !important;
+    --font-code: "Jetbrains Mono Nerd Font", monospace !important;
+}
+
+/* Force global font apply */
+* {
+    font-family: var(--font-primary);
+}
