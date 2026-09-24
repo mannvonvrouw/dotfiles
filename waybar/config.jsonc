@@ -1,0 +1,123 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["niri/workspaces", "custom/block", "custom/openconf", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/watdidowrong","custom/openwaybarj", "custom/openwaybarc", "custom/reload", "custom/wifi", "memory", "custom/pavucontrol", "custom/shutdown"],
+
+
+    "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+        "1": "А",
+        "2": "Б",
+        "3": "В",
+        "4": "Г",
+        "5": "Д",
+        "6": "Е",
+        "7": "Ё",
+        "8": "Ж",
+        "9": "З",
+        "10": "И",
+        "11": "Й",
+        "12": "К",
+        "13": "Л",
+        "14": "М",
+        "15": "Н",
+        "16": "О",
+        "17": "П",
+        "18": "Р",
+        "19": "С",
+        "20": "Т",
+        "21": "У",
+        "22": "Ф",
+        "23": "Х",
+        "24": "Ц",
+        "25": "Ч",
+        "26": "Ш",
+        "27": "Щ",
+        "28": "Ъ",
+        "29": "Ы",
+        "30": "Ь",
+        "31": "Э",
+        "32": "Ю",
+        "33": "Я",
+        "default": "•"
+        }
+    },
+
+    // Clock Module (Flight Time / UTC)
+    "clock": {
+    "interval": 1,
+        "format": "БОРТ: {:%H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "kitty calcurse"
+    },
+
+    "custom/block": {
+        "format": " | "
+    },
+
+    "custom/openconf": {
+        "format": "КОНФИГ",
+    "on-click": "kitty nvim ~/.config/niri/config.kdl",
+    "tooltip": false
+    },
+
+    "custom/openwaybarc": {
+      "format": "СТИЛЬ",
+      "on-click": "kitty nvim ~/.config/waybar/style.css",
+      "tooltip": false
+  },
+
+    "custom/openwaybarj": { 
+    "format": "ПАНЕЛЬ",
+    "on-click": "kitty nvim ~/.config/waybar/config.jsonc",
+    "tooltip": false
+  },
+
+    // Memory Module (Telemetry/CPU-RAM)
+    "memory": {
+        "format": "ТЕЛЕМЕТРИЯ {}%",
+        "interval": 30,
+        "on-click": "kitty btop"
+    },
+
+    // Custom Button for Pavucontrol with Vulkan Disabled
+    "custom/pavucontrol": {
+        "format": "СВЯЗЬ",
+        "on-click": "GTK_DISABLE=vulkan pavucontrol",
+        "tooltip": false
+    },
+
+    "custom/wifi": {
+      "format": "РАДАР",
+      "on-click": "kitty nmtui",
+      "tooltip": false
+  },
+
+    "custom/reload": {
+      "format": "ПУСК",
+      "on-click": "./reload.sh",
+      "tooltip": false
+
+  },
+
+  "custom/shutdown": {
+    "format": "КАТАПУЛЬТА",
+    "on-click": "kitty ./shutdown.sh",
+    "tooltip": false
+  },
+
+  "custom/watdidowrong": {
+    "format": "АВАРИЯ!",
+    "on-click": "kitty ./fuckido.sh",
+   "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  }
+}

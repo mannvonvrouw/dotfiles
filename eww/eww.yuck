@@ -1,0 +1,15 @@
+(deflisten telemetry 
+  :initial "ИНИЦИАЛИЗАЦИЯ ДВИГАТЕЛЯ..."
+  "./rocket-telemetry.sh")
+
+(defwidget rocket-status-widget []
+  (box :class "telemetry-box" :orientation "h" :space-evenly false
+    (label :text telemetry)))
+
+(defwindow rocket-status
+  :monitor 0
+  :geometry (geometry :x "20px" :y "20px" :width "292px" :height "40px" :anchor "bottom right")
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore true
+  (rocket-status-widget))
