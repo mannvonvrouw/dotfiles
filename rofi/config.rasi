@@ -1,0 +1,110 @@
+* {
+    /* Roscosmos Color Palette */
+    bg-base:      #000080;  /* Deep space navy */
+    bg-alt:       #131a29;  /* Slightly lighter slate-navy for selection/elements */
+    border-col:   #cc2929;  /* Roscosmos Soviet Red accent */
+    accent:       #e6b800;  /* Orbital gold highlight */
+    text-main:    #343434;  /* Crisp telemetry white */
+    text-dim:     #8a99ad;  /* Muted grey-blue for placeholders/unselected */
+
+    background-color: transparent;
+    text-color:       @text-main;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    location:       center;
+    anchor:         center;
+    transparency:   "real";
+    width:          600px;
+    border:         2px;
+    border-color:   @border-col;
+    background-color: @bg-base;
+    border-radius:  4px;
+}
+
+mainbox {
+    padding:        16px;
+    background-color: @bg-base;
+    children:       [ inputbar, message, listview ];
+}
+
+inputbar {
+    spacing:        12px;
+    padding:        12px;
+    background-color: @bg-alt;
+    border-radius:  2px;
+    border:         1px solid;
+    border-color:   @border-col;
+    children:       [ prompt, entry ];
+}
+
+prompt {
+    text-color:     @accent;
+    font:           "JetBrains Mono Bold 12";
+}
+
+entry {
+    placeholder:    "ВВЕДИТЕ КОМАНДУ";
+    placeholder-color: @text-dim;
+    text-color:       @text-main;
+    font:           "JetBrains Mono 12";
+}
+
+message {
+    margin:         10px 0px 0px 0px;
+    padding:        8px;
+    background-color: @bg-alt;
+    border-radius:  2px;
+}
+
+textbox {
+    text-color:     @accent;
+    font:           "JetBrains Mono 10";
+}
+
+listview {
+    margin:         12px 0px 0px 0px;
+    padding:        4px;
+    spacing:        4px;
+    lines:          8;
+    columns:        1;
+    fixed-height:   false;
+    background-color: @bg-base;
+}
+
+element {
+    padding:        10px 12px;
+    spacing:        8px;
+    background-color: transparent;
+    border-radius:  2px;
+}
+
+element normal normal {
+    text-color:     @text-main;
+}
+
+element alternate normal {
+    text-color:     @text-main;
+}
+
+element selected normal {
+    background-color: @bg-alt;
+    text-color:     @accent;
+    border:         1px solid;
+    border-color:   @accent;
+}
+
+element-icon {
+    size:           20px;
+    cursor:         inherit;
+}
+
+element-text {
+    text-color:     inherit;
+    cursor:         inherit;
+    font:           "JetBrains Mono 11";
+}
